@@ -72,7 +72,6 @@ public class DriverStatService {
 						"Driver by Id = " + driverId + " was not found."));
 	}
 	
-
 	public DriverCarType saveCar(DriverCarType carData) {
 		Long carId = carData.getCarId();
 		CarType car = findOrCreateCar(carId);
@@ -276,8 +275,7 @@ public class DriverStatService {
 		}
 		return result;
 	}
-	
-	
+		
 	public TrackData findTrackDataById(Long trackId) {
 		Track track = trackDao.findById(trackId)
 				.orElseThrow(()-> new NoSuchElementException(
@@ -315,7 +313,4 @@ public class DriverStatService {
 		Track track = findTrackById(trackId);
 		trackDao.delete(track);
 	}
-	
-	
-	
 }

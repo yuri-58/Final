@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.WebRequest;
 
-import lombok.extern.slf4j.Slf4j;
+
 
 @RestController
-@Slf4j
+
 public class GlobalErrorHandler {
 
 	@ExceptionHandler(NoSuchElementException.class)

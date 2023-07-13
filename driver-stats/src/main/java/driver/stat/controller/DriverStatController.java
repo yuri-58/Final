@@ -110,6 +110,14 @@ public class DriverStatController {
 		return dSService.saveCar(carData);
 	}
 	
+	@PutMapping("/{trackId}/track")
+	public TrackData updateTrack(
+			@PathVariable Long trackId,
+			@RequestBody TrackData trackData) {
+		trackData.setTrackId(trackId);
+		return dSService.saveTrack(trackData);
+	}
+	
 	@PutMapping("/{driverId}/driver_cars/{carId}/{engineId}")
 	public DriverData updateDriverCarData(
 			@PathVariable Long driverId,
@@ -126,6 +134,7 @@ public class DriverStatController {
 			@PathVariable Long trackId,
 			@PathVariable Long statId,
 			@RequestBody DriverStatData driverStats) {
+		driverStats.setStatId(statId);
 		return dSService.saveDriverStats(driverStats, driverId, trackId);
 	}
 	
